@@ -1,38 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Contact.css';
 
-const name = "Landon Dixon";
-const avatar = 'https://randomuser.me/api/portraits/men/82.jpg';
-const online = true;
-
-function Contact() {
+function Contact(props) {
   return (
     <div className="Contact">
-        <img class="avatar" src={avatar} />
+        <img className="avatar" src={props.avatar} alt={props.name} />
         <div>
-            <h4 class="name">{name}</h4>
-            <div class="status">
-                <div class={online ? "status-online" : "status-offline"}></div>
-                <p class="status-text">{online ? "Online" : "Offline"}</p>
+            <h4 className="name">{props.name}</h4>
+            <div className="status">
+                <div className={props.online ? "status-online" : "status-offline"}></div>
+                <p className="status-text">{props.online ? "Online" : "Offline"}</p>
             </div>
         </div>
     </div>
   );
 }
 
-export default Contact;
+Contact.propTypes = {
+  name: PropTypes.string,
+  avatar: PropTypes.string,
+  online: PropTypes.bool,
+};
 
-/*
-const name = "Darth Plagueis";
-const avatar = 'https://avatarfiles.alphacoders.com/798/79894.jpg';
-const online = false;
-const element = (
-  <div className="person-item">
-    <img className ="avatar" src={avatar} />
-    <div>
-      <h4>{name}</h4>
-      <p>{online ? "Online" : "Offline"}</p>
-    </div>
-  </div>
-);
-*/
+export default Contact;
