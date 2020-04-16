@@ -25,7 +25,6 @@ class Contact extends React.Component {
 }
 
 
-
 Contact.propTypes = {
   name: PropTypes.string,
   avatar: PropTypes.string,
