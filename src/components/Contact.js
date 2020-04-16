@@ -5,7 +5,9 @@ import './Contact.css';
 class Contact extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { online:false}
+    this.state = { online: props.online }
+    //how to init using prop.online ?
+    //this.state = props.online
   }
 
   render() {
